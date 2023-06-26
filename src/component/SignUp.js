@@ -24,11 +24,11 @@ export default function SignUp() {
       await signUp(email, password)
       navigate("/")
     } catch (error) {
-      // toast.error("invalid email or password",{
-      //   position: "top-center",
-      //   theme: "colored",
-      // })
-      setError(error.message)
+      toast.error("invalid email or password",{
+        position: "top-center",
+        theme: "colored",
+      })
+      // setError(error.message)
     }
 
 
@@ -61,7 +61,7 @@ export default function SignUp() {
 
                 </Grid.Col>
                 <Grid.Col pt="xl">
-                  <TextInput onChange={(e) => setPassword(e.target.value)} name='password' size="lg" placeholder="Password" type={showPassword ? 'text' : 'password'} styles={{ error: { color: 'pink', } }} rightSection={<ActionIcon onClick={toggleShowPassword}>{showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}</ActionIcon>} />
+                  <TextInput onChange={(e) => setPassword(e.target.value)} name='password' size="lg" placeholder="Password" type={showPassword ? 'text' : 'password'} styles={{ error: { color: 'pink', } }} rightSection={<ActionIcon style={{ fontSize: '24px' }} onClick={toggleShowPassword}>{showPassword ? <AiFillEyeInvisible  /> : <AiFillEye />}</ActionIcon>} />
 
                 </Grid.Col>
               </Grid>
